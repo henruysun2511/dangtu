@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8f9;
+  --dashboard-bg: #e9f2ff;
+  --foreground: #091e42;
+  
+  /* Electric Vibrant Jira Cloud Blue Palette (#0c66e4) */
+  --primary: #0c66e4;          /* Modern Jira Cloud Electric Blue - Bright, punchy, fresh */
+  --primary-hover: #0055cc;    /* Crisp Jira Blue on hover */
+  --primary-vibrant: #0c66e4;  /* Jira action blue */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #ffab00;        /* Jira Amber / Warning */
+  --secondary-foreground: #172b4d;
+  
+  --accent: #e9f2ff;           /* Jira B50 - soft electric blue tint */
+  --accent-foreground: #0c66e4;
+  --border: #dcdfe4;           /* Jira crisp border */
+  --card: #ffffff;
+  --radius: 1.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-primary: #0c66e4;
+  --color-primary-hover: #0055cc;
+  --color-secondary: var(--secondary);
+  --color-dashboard-bg: var(--dashboard-bg);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Map blue utility classes to Electric Jira Blue palette (#0c66e4) */
+  --color-blue-600: #0c66e4;   /* Primary Jira bright blue */
+  --color-blue-700: #0055cc;   /* Hover Jira blue */
+  --color-blue-800: #09326c;   /* Pressed deep blue */
+  --color-blue-500: #0c66e4;   /* Vibrant electric Jira blue */
+  --color-blue-400: #388bff;   /* Fresh light sky blue */
+  --color-blue-300: #85b8ff;
+  --color-blue-200: #b3d4ff;
+  --color-blue-100: #cce0ff;
+  --color-blue-50: #e9f2ff;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Jira scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c7d0;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0c66e4;
+}
+
+/* Jira subtle dot pattern */
+.solarn-dot-bg {
+  background-image: radial-gradient(#dfe1e6 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Electric Jira Blue subtle glow */
+.solarn-glow {
+  background: radial-gradient(circle, rgba(12, 102, 228, 0.14) 0%, rgba(233, 242, 255, 0) 70%);
 }
